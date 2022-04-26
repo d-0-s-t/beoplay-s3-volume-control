@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+	<title>Beoplay S3 Volume Control</title>
+	<link rel="stylesheet" type="text/css" href="./../css/app.css">
+	<!-- <link rel="stylesheet" type="text/css" href="./../css/slider.css"> -->
+	<script type="module" defer src="./../js/app.js"> </script>
+</head>
+
+<body>
+	<div id="volumeControlContainer">
+		<input id="volumeInput" type=range title="S3 Direct Volume Conrol" step=1 min=0 max=127>
+	</div>
+	<div id="countDisplay" title="Number of devices actively connected."> x0 </div>
+	<button id="startDiscoveryButton" class="hidden"> SD </button>
+	<button id="togglePowerState" class="miniButton" title="Toggle Sleep State. Can work as Mute."> </button>
+	<button id="settingsButton" class="miniButton" title="Open Settings window."> </button>
+	<button id="closeButton" class="miniButton" title="This will close the app completely."> </button>
+</body>
+
+</html>

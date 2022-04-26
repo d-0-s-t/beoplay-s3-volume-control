@@ -1,0 +1,53 @@
+body,
+html {
+	width: 100%;
+	height: 100%
+}
+
+body {
+	background: #fefefe;
+	padding: 0px;
+	margin: 0px;
+	font-family: sans-serif;
+	user-select: none;
+}
+
+#settingsBin {
+	width: 100%;
+	height: 300px;
+	position: relative;
+}
+
+#settingsContainer {
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	width: 100%;
+}
+
+#settingsContainer>label {
+	display: block;
+	margin: 10px;
+	max-width: 640px;
+}
+
+#settingsContainer button {
+	margin: 10px;
+}
+
+#bodyContainer {
+	display: flex;
+	flex-flow: column;
+	height: 100%;
+}
+
+#consoleBin {
+    flex: 1;
+    overflow-y: auto;
+    background: grey;
+    color: white;
+    margin: 0px;
+    padding: 5px;
+    white-space: pre-wrap;
+}

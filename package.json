@@ -1,0 +1,122 @@
+{
+	"name": "beoplay-s3-volume-control",
+	"version": "0.1.0",
+	"author": {
+		"name": "d0st"
+	},
+	"description": "Direct volume level control for s3 speakers from a BLE enabled desktop",
+	"devDependencies": {
+		"@types/web-bluetooth": "0.0.10",
+		"asar": "^3.0.3",
+		"electron": "^18.0.3",
+		"electron-builder": "^23.0.3",
+		"electron-reloader": "^1.2.1",
+		"eslint": "^7.32.0",
+		"eslint-plugin-jsdoc": "^39.2.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/d-0-s-t/beoplay-s3-volume-control.git"
+	},
+	"scripts": {
+		"start": "electron .",
+		"build": "electron-builder --config build/build.js --publish never",
+		"publish": "electron-builder --config build/build.js --publish always"
+	},
+	"productName": "Beoplay S3 Volume Control",
+	"main": "src/electron/main.js",
+	"eslintConfig": {
+		"extends": [
+			"eslint:recommended",
+			"plugin:jsdoc/recommended"
+		],
+		"globals": {
+			"BSVC": "readonly",
+			"Electron": "readonly"
+		},
+		"parserOptions": {
+			"ecmaVersion": 8
+		},
+		"env": {
+			"es6": true
+		},
+		"rules": {
+			"no-var": "error",
+			"indent": [
+				"error",
+				"tab",
+				{
+					"SwitchCase": 1
+				}
+			],
+			"linebreak-style": [
+				"error",
+				"unix"
+			],
+			"quotes": [
+				"error",
+				"double"
+			],
+			"semi": [
+				"error",
+				"never"
+			],
+			"jsdoc/multiline-blocks": [
+				"error",
+				{
+					"noZeroLineText": false,
+					"noFinalLineText": false
+				}
+			],
+			"jsdoc/require-param-description": 0,
+			"jsdoc/require-returns-description": 0,
+			"jsdoc/newline-after-description": 0,
+			"jsdoc/require-property-description": 0,
+			"jsdoc/require-jsdoc": [
+				"error",
+				{
+					"exemptEmptyFunctions": true,
+					"require": {
+						"ArrowFunctionExpression": false,
+						"FunctionExpression": true,
+						"MethodDefinition": true
+					}
+				}
+			]
+		},
+		"settings": {
+			"jsdoc": {
+				"mode": "typescript"
+			}
+		},
+		"plugins": [
+			"jsdoc"
+		],
+		"overrides": [
+			{
+				"files": [
+					"./src/web-app/**/*.js"
+				],
+				"env": {
+					"browser": true
+				},
+				"parserOptions": {
+					"sourceType": "module"
+				}
+			},
+			{
+				"files": [
+					"./src/electron/*.js",
+					"./build/**/*.js"
+				],
+				"env": {
+					"node": true
+				}
+			}
+		]
+	},
+	"dependencies": {
+		"auto-launch": "^5.0.5",
+		"electron-updater": "^5.0.1"
+	}
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+	<title>Beoplay S3 Volume Control</title>
+	<link rel="stylesheet" type="text/css" href="./../css/settings.css">
+	<!-- <link rel="stylesheet" type="text/css" href="./../css/slider.css"> -->
+	<script type="module" defer src="./../js/settings.js"> </script>
+</head>
+
+<body>
+	<div id="bodyContainer">
+		<div id="settingsBin">
+			<div id="settingsContainer">
+				<label for="LOAD_AT_STARTUP">
+					<input type="checkbox" name="LOAD_AT_STARTUP" id="autostartWithSystem">
+					Launch at Start-up
+				</label>
+				<label for="ALWAYS_AWAKE">
+					<input type="checkbox" name="ALWAYS_AWAKE" id="powerOffShutDown">
+					Keep speakers Awake. Likely causes higher power usage and requires restart. 
+					Also requires speakers to be playable by this machine.
+				</label>
+				<label for="CONSUME_MEDIA_KEYS">
+					<input type="checkbox" name="CONSUME_MEDIA_KEYS" id="consumeMediaKeys">
+					Consume media volume keys. System volume control will be biapassed, instead will be directed to connected speakers.
+					Requires restart.
+				</label>
+				<label for="SHOW_WINDOW_WHEN_CHANGE">
+					<input type="checkbox" name="SHOW_WINDOW_WHEN_CHANGE" id="showWindowWhenChange">
+					Show window while changing volume level. Applies when "consume volume keys" is checked.
+				</label>
+				<label for="POWER_OFF_AT_SHUTDOWN">
+					<input type="checkbox" name="POWER_OFF_AT_SHUTDOWN" id="powerOffShutDown">
+					Power off speakers on shutdown. (Mac and Linux Only)
+				</label>
+				<label for="SCAN_TIME">
+					Scan Time:
+					<input type="range" min="1000" max="120000" step="100" id="scanTime" name="SCAN_TIME">
+					<label class="rangeValue"> </label><br>
+					Increase this if all your devices are not connecting at startup.
+				</label>
+				<button id="rescan"> Rescan and Reconnect </button>
+			</div>
+		</div>
+		<pre id="consoleBin"></pre>
+	</div>
+</body>
+
+</html>
